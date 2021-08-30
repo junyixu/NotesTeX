@@ -64,6 +64,13 @@
 % ----------------------------------------------------------------------
 %           User Page Prefrences 
 % ----------------------------------------------------------------------
+
+\definecolor{green4eye}{RGB}{0,120,2}%
+\definecolor{blue4eye}{RGB}{1,126,218}%
+\definecolor{cyan4eye}{RGB}{31,186,190}%
+\definecolor{mybackground}{RGB}{204,232,207}
+\pagecolor{mybackground} 
+
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
 \geometry{paperheight=845pt,paperwidth=597pt,                   %fix paperwidth and height.
@@ -103,13 +110,17 @@
 
 \newenvironment{fullpage}
     {\smallskip\noindent\begin{minipage}
-    {\textwidth+\marginparwidth+\marginparsep}\hrule\smallskip\smallskip}
-    {\hrule\end{minipage}\vspace{.1in}}
+    {\textwidth+\marginparwidth+\marginparsep}\smallskip\smallskip}
+    {\end{minipage}\vspace{.1in}}
 
 % ----------------------------------------------------------------------
 %           User Created Environments 
 % ----------------------------------------------------------------------
 
+
+\titleformat*{\section}{\normalfont\Large\bfseries\color{green4eye}}
+\titleformat*{\subsection}{\normalfont\large\bfseries\color{green4eye}}
+\titleformat*{\subsubsection}{\normalfont\normalsize\bfseries\color{green4eye}}
 
 \newtheoremstyle{mystyle}%
   {}%
@@ -121,30 +132,33 @@
   { }%
   {}%
 
-\renewenvironment{proof}{{\sffamily\bfseries Proof. }}{\qed}
+\captionsetup{
+labelfont={bf,color=green4eye}}
+
+\renewenvironment{proof}{{\sffamily\bfseries 证明. }}{\qed}
 
 \theoremstyle{mystyle}{
-  \newtheorem*{remark}{Remark}
+  \newtheorem*{remark}{\color{green4eye}评注}
 }
 
 \theoremstyle{mystyle}{
-  \newtheorem{definition}{Definition}[section]
+  \newtheorem{definition}{定义}[section]
 }
 
 \theoremstyle{mystyle}{
-  \newtheorem{theorem}{Theorem}[section]
+	\newtheorem{theorem}{定理}[section]
 }
 
 \theoremstyle{mystyle}{
-  \newtheorem{lemma}[theorem]{Lemma}
+  \newtheorem{lemma}[theorem]{引理}
 }
 
 \theoremstyle{mystyle}{
-  \newtheorem*{example}{Example}
+  \newtheorem*{example}{例}
 }
 
 \theoremstyle{definition}{
-    \newtheorem*{exercise}{Exercise}}
+    \newtheorem*{exercise}{练习题}}
 
 
 \tcolorboxenvironment{definition}{
@@ -427,9 +441,9 @@
 \RequirePackage[colorlinks=true
 ,urlcolor=blue
 ,anchorcolor=blue
-,citecolor=blue
-,filecolor=blue
-,linkcolor=blue
+,citecolor=green4eye
+,filecolor=green4eye
+,linkcolor=green4eye
 ,menucolor=blue
 ,linktocpage=true
 ,pdfproducer=medialab
@@ -698,15 +712,15 @@
 \renewcommand\section{\@startsection{section}{1}{\z@}%
                                    {-3.5ex \@plus -1.3ex \@minus -.7ex}%
                                    {2.3ex \@plus .4ex \@minus .4ex}%
-                                   {\sffamily\Large\bfseries}}
+																 {\sffamily\Large\bfseries\color{blue4eye}}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
                                    {-2.3ex \@plus -1ex \@minus -.5ex}%
                                    {1.2ex \@plus .3ex \@minus .3ex}%
-                                   {\sffamily\large\bfseries}}
+                                   {\sffamily\large\bfseries\color{blue4eye}}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
                                    {-2.3ex \@plus -1ex \@minus -.5ex}%
                                    {1.0ex \@plus .2ex \@minus .2ex}%
-                                   {\sffamily\normalsize\bfseries}}
+                                   {\sffamily\normalsize\bfseries\color{blue4eye}}}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
                                    {1.75ex \@plus1ex \@minus.2ex}%
                                    {-1em}%
